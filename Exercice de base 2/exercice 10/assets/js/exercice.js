@@ -1,9 +1,9 @@
-let additionne = (x) =>{
-     return x+2
+function somme() {
+      let n;
+      let resultat = 0;
+      for (n=0; n <3; n++){
+            let p = prompt("Entrez un nombre : ");
+            resultat = resultat + Number(p);
       }
-let affiche = () =>{
-    let table =[-2,1,4]
-
-    alert(additionne(table[0]))
-    alert(additionne(table[table.length-1]));
+      alert(resultat);
 }

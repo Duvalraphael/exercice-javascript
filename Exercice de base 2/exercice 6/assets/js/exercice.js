@@ -1,10 +1,10 @@
 let soustrait = (x) =>{
-     return x-2
-     if (x<=0) {
-         alert("Nombre négatif")
-     }else{
-         alert(x)
-     }
+    if (x<=0) {
+        alert("Nombre négatif")
+    }else{
+        alert(x)
+    }
+    return x-2
       }
 let affiche = () =>{
     let table =[-2,1,4]

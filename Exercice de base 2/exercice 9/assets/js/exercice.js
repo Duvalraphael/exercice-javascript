@@ -1,9 +1,7 @@
-let additionne = (x) =>{
-     return x+2
+function testWhile() {
+      do {
+            phrase = prompt("Inserer une phrase contenant la lettre p");
+      }while(phrase.indexOf ('p')=== -1){
+            alert( "' " + phrase + " '");
       }
-let affiche = () =>{
-    let table =[-2,1,4]
-
-    alert(additionne(table[0]))
-    alert(additionne(table[table.length-1]));
 }

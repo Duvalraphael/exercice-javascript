@@ -1,0 +1,5 @@
+const input = document.getElementById ("nom");
+
+input.addEventListener("change", function(){
+    alert("Merci de votre participation !")
+});
