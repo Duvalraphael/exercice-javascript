@@ -1,15 +1,23 @@
 let click = document.getElementById("click");
 let affichage = document.getElementById("affichage");
 let multiplier = document.getElementById("multiplier");
-let autoclick = document.getElementById('autoclick')
+let autoclick = document.getElementById('autoclick');
+let bonus = document.getElementById('bonus');
 let score = 0;
 
 
 let functionClick =() => {
+    if (bonus.disabled === true){
+        score = (score +(1 * (multiplicateur-1))*2);
+        score += 2;
+        affichage.innerHTML = score;
+        console.log(score);
+    }else{
     score += 1;
     score = score +(1 *(multiplicateur-1));
     console.log( score , multiplicateur);
     affichage.innerHTML = score;
+    }
     if (score < 0){
         reset();
         alert("T'as déja eu  un nombres négatif de cookie sale loser!");
@@ -42,6 +50,13 @@ let autoClick = () => {
     };
 };
 
+let functionBonus = ()=> {
+    if(score<5000){
+        alert("Tu sais compter ? t'a pas assez de cookie")
+    }else{
+    bonus.setAttribute('disabled', true);
+    }
+}
 
 let reset = () => {
     multiplicateur=1;
@@ -51,4 +66,5 @@ let reset = () => {
     multiplier.innerHTML = "Multiplicateur X 1 \n Prix: 50";
     autoclick.removeAttribute('disabled');
     clearInterval(AutoClick);
+    bonus.removeAttribute('disabled');
 };
