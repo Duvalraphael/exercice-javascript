@@ -4,6 +4,7 @@ let multiplier = document.getElementById("multiplier");
 let autoclick = document.getElementById('autoclick');
 let bonus = document.getElementById('bonus');
 let score = 0;
+let multiplicateur = 1;
 
 
 let functionClick =() => {
@@ -22,27 +23,24 @@ let functionClick =() => {
         reset();
         alert("T'as déja eu  un nombres négatif de cookie sale loser!");
     };
-
 };
-let multiplicateur = 1;
 
 let augmenterMultiplicateur = () => {
-    console.log("multi " + multiplicateur);
-    let prixM = 50 *multiplicateur
-    multiplicateur += 1;
-    score = score -prixM;
-    affichage.innerHTML = score;
-    multiplier.innerHTML = "Multiplicateur X " + multiplicateur + "\n Prix :" + 50*multiplicateur;
-    if (score < 0){
-        reset();
-        alert("T'as déja eu  un nombres négatif de cookie sale loser!" +"\n Pour la peine tu recommence !");
+    if (score < 50){
+        alert("T'as déja eu  un nombres négatif de cookie sale loser! Tu essayes de tricher ?");
+    }else{
+        let prixM = 50 *multiplicateur || true;
+        multiplicateur += 1;
+        score = score -prixM;
+        affichage.innerHTML = score;
+        multiplier.innerHTML = "Multiplicateur X " + multiplicateur + "\n Prix :" + 50*multiplicateur;
     };
 }
 
 let autoClick = () => {
     if (score < 500){
         alert("Abandonne tu y arriveras jamais!");
-    }else {
+    }else{
     score = score - 500 || true;
     affichage.innerHTML = score;
     autoclick.setAttribute('disabled', true);
@@ -54,7 +52,23 @@ let functionBonus = ()=> {
     if(score<5000){
         alert("Tu sais compter ? t'a pas assez de cookie")
     }else{
-    bonus.setAttribute('disabled', true);
+        score -= 5000;
+        affichage.innerHTML = score;
+        
+        let timeLeft= 30;
+        
+        let count = () => {
+            if (timeLeft == 0) {
+                clearInterval(timer);
+                bonus.innerHTML = "Bonus \n Prix: 5000";
+                bonus.removeAttribute('disabled', 'disabled');
+            } else {
+                bonus.setAttribute('disabled', true);
+                bonus.innerHTML = "Bonus " + timeLeft;
+                timeLeft --;   
+            }
+        }
+        let timer = setInterval(count, 1000);
     }
 }
 
@@ -66,5 +80,5 @@ let reset = () => {
     multiplier.innerHTML = "Multiplicateur X 1 \n Prix: 50";
     autoclick.removeAttribute('disabled');
     clearInterval(AutoClick);
-    bonus.removeAttribute('disabled');
+    clearInterval(timer);
 };

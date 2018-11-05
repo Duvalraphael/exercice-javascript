@@ -1,0 +1,31 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  * body {
+    margin: 0;
+    background: lightgray;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    * body #click {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+    * body #multiplier {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+    * body #autoclick {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+    * body #bonus {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+    * body #reset {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }

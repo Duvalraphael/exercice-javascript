@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    body{
+        margin: 0;
+        background: lightgray;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #affichage{
+
+        }
+        #click{
+         flex-wrap: wrap;   
+        }
+        #multiplier{
+            flex-wrap: wrap;
+        }
+        #autoclick{
+            flex-wrap: wrap;
+        }
+        #bonus{
+            flex-wrap: wrap;
+        }
+        #reset{
+            flex-wrap: wrap;
+        }
+    }
+}
